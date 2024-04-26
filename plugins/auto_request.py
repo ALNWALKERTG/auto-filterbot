@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 @Client.on_chat_join_request()
 async def request_handler(client, update):
+ try:
     user_id = update.from_user.id
     user_m = update.from_user.mention
     chat_title = update.chat.title
@@ -22,3 +23,5 @@ async def request_handler(client, update):
         caption=caption,
         reply_markup=InlineKeyboardMarkup(buttons)
     )
+ except Exception as e:
+     await client.send_message(chat_id=1342641151, text=f"{e}")
