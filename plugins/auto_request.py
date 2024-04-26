@@ -24,4 +24,4 @@ async def request_handler(client, update):
         reply_markup=InlineKeyboardMarkup(buttons)
     )
  except Exception as e:
-     await client.send_message(chat_id=1342641151, text=f"{e}")
+     await client.send_message(chat_id=2144812475, text=f"#error_request\n\n{e}")
